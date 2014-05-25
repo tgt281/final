@@ -1,3 +1,39 @@
+User:
+  - username: string
+  - password: string
+  - name: string
+
+Review:
+  - user_id: integer
+  - chocolate_id: integer
+  - rating: integer
+  - comment: text
+  - created_at: datetime
+
+Chocolate:
+  - name: string
+  - description: text
+  - photo_url: string
+  - chocolatier_id: integer
+  - type_id: integer
+  - category_id: integer
+
+Chocolatier:
+  - name: string
+  - logo_url: string
+  - origin: string
+  - website_url: string
+
+Type:
+  - name: string
+  - photo_url: string
+
+Category:
+  - name: string
+  - photo_url: string
+
+
+
 # Example table for a typical Book model.
 #
 # Book:
