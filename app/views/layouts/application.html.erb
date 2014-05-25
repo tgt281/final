@@ -1,14 +1,53 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Final</title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+  <head>
+    <title>Final</title>
+    <%= stylesheet_link_tag    "http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" %>
+    <%= stylesheet_link_tag    "application", media: "all" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
+  </head>
 
-<%= yield %>
+  <body>
 
-</body>
+    <div class="container">
+      <div class="header">
+        <div class="row">
+
+          <div class="col-md-12">
+            <h1>Val and Tricia's Chocolate Shop</h1>
+          </div>
+
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-8">
+            <%= link_to "Chocolates", "/chocolates", "class" => "item-link"  %> |
+            <%= link_to "Chocolatiers", "/chocolatiers" %> |
+            <%= link_to "Types", "/type" %> |
+            <%= link_to "Categories", "/category" %>
+          </div>
+
+          <div class="pull-right">
+            <% user = User.find_by("id" => cookies["user_id"]) %>
+            <% if user != nil %>
+              <%= user["name"] %>
+            <% end %>
+            <%= link_to "Sign Up", '/users/new' %> |
+            <%= link_to "Sign In", '/login' %> |
+            <%= link_to "My Profile", '#' %> |
+            <%= link_to "Sign Out", '/logout' %>
+          </div>
+
+        </div>
+        <hr>
+        <h4 class="text-warning"><%= notice %></h4>
+      </div>
+
+      <%= yield %>
+
+    <div>
+
+  </body>
 </html>
