@@ -1,4 +1,102 @@
 Final::Application.routes.draw do
+
+  # Home page
+  get "/" => "welcome#index"
+
+
+  # Sign-In and Sign-Out
+  get "/login" => 'sessions#login'
+  post "/authenticate" => 'sessions#authenticate'
+
+
+  # Resource: Users
+
+  # --- Create
+  get "/users/new" => 'users#new'
+  post "/users" => 'users#create'
+
+  # --- Read
+  get "/users" => 'users#index'
+  get "/users/:id" => 'users#show'
+
+  # -- Update
+  get "/users/:id/edit" => 'users#edit'
+  patch "/users/:id" => 'users#update'
+
+  # --- Delete
+  delete "/users/:id" => 'users#destroy'
+
+
+  # Resource: Reviews
+
+  # --- Create
+  get "/reviews/new" => 'reviews#new'
+  post "/reviews" => 'reviews#create'
+
+  # --- Read
+  get "/reviews" => 'reviews#index'
+  get "/reviews/:id" => 'reviews#show'
+
+  # -- Update
+  get "/reviews/:id/edit" => 'reviews#edit'
+  patch "/reviews/:id" => 'reviews#update'
+
+  # --- Delete
+  delete "/reviews/:id" => 'reviews#destroy'
+
+
+  # Resource: Chocolates
+
+  # --- Create
+  get "/chocolates/new" => 'chocolates#new'
+  post "/chocolates" => 'chocolates#create'
+
+  # --- Read
+  get "/chocolates" => 'chocolates#index'
+  get "/chocolates/:id" => 'chocolates#show'
+
+  # -- Update
+  get "/chocolates/:id/edit" => 'chocolates#edit'
+  patch "/chocolates/:id" => 'chocolates#update'
+
+  # --- Delete
+  delete "/chocolates/:id" => 'chocolates#destroy'
+
+
+  # Resource: Chocolatiers
+
+  # --- Create
+  get "/chocolatiers/new" => 'chocolatiers#new'
+  post "/chocolatiers" => 'chocolatiers#create'
+
+  # --- Read
+  get "/chocolatiers" => 'chocolatiers#index'
+  get "/chocolatiers/:id" => 'chocolatiers#show'
+
+  # -- Update
+  get "/chocolatiers/:id/edit" => 'chocolatiers#edit'
+  patch "/chocolatiers/:id" => 'chocolatiers#update'
+
+  # --- Delete
+  delete "/chocolatiers/:id" => 'chocolatiers#destroy'
+
+
+  # Resource: Type
+
+  # --- Read
+  get "/type" => 'type#index'
+  get "/type/:id" => 'type#show'
+
+
+  # Resource: Category
+
+  # --- Read
+  get "/category" => 'category#index'
+  get "/category/:id" => 'category#show'
+
+
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
