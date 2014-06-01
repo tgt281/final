@@ -1,3 +1,31 @@
+.review {
+  margin-top: 12px;
+  border-top: 2px solid gray;
+  padding-top: 12px;
+}
+
+.header {
+  margin-bottom: 12px;
+  padding-bottom: 12px;
+}
+
+.chocolate { margin-bottom: 36px; }
+
+.indeximage {
+  height: 260px;
+  width: 230px;
+  border: 1px solid #CCC;
+  box-shadow: 10px 10px 10px #999;
+}
+
+.showimage
+{
+  height: 160px;
+  width: 130px;
+  border-radius: 50%;
+  border: 1px solid #CCC;
+  box-shadow: 10px 10px 10px #999;
+}
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.

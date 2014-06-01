@@ -1,0 +1,50 @@
+<div class="page-header">
+  <h1>Add a New Chocolate</h1>
+</div>
+
+<div class="row">
+  <div class="col-md-5">
+
+    <%= form_tag "/chocolates", "method" => "post"  %>
+
+      <div class="form-group">
+        <%= label_tag "name", "What is the name of the chocolate?" %>
+        <%= text_field_tag "name", "", "class" => "form-control" %>
+      </div>
+
+      <div class="form-group">
+        <%= label_tag "description", "Description" %>
+        <%= text_field_tag "description", "", "class" => "form-control" %>
+      </div>
+
+      <div class="form-group">
+        <%= label_tag "photo", "Upload an image" %>
+        <%= text_field_tag "url", "", "class" => "form-control" %>
+      </div>
+
+      <div class="form-group">
+        <%= label_tag "chocolatier", "Who is made by?" %>
+        <%= text_field_tag "chocolatier", "", "class" => "form-control" %>
+      </div>
+
+      <div class="form-group">
+        <%= label_tag "chosen_type_id", "White, Milk, or Dark Chocolate?" %>
+        <%= select_tag "chosen_type_id",
+                            options_from_collection_for_select(Type.read.order("name"),
+                            "id",
+                            "name"), "class" => "form-control" %>
+      </div>
+
+      <div class="form-group">
+        <%= label_tag "chosen_category_id", "Choose a Category:" %>
+        <%= select_tag "chosen_category_id",
+                       options_from_collection_for_select(Category.read.order("name"),
+                        "id",
+                        "name"), "class" => "form-control" %>
+      </div>
+
+      <%= submit_tag "Add This Chocolate", "class" => "btn btn-lg btn-success" %> or <%= link_to "Cancel", "/chcolates" %>
+
+    </form>
+</div>
+</div>

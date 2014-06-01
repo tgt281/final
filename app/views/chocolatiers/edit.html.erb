@@ -1,0 +1,29 @@
+<% chocolatier = Chocolatier.find_by("id" => params["id"]) %>
+
+<h1>Edit Chocolatier entry for <%= chocolatier["name"] %></h1>
+
+<%= form_tag "/chocolatiers/#{chocolatier["id"]}", "method" => "patch"  %>
+
+      <div class="form-group">
+        <%= label_tag "name", "What is the name of the Chocolatier?" %>
+        <%= text_field_tag "name", "", "class" => "form-control" %>
+      </div>
+
+      <div class="form-group">
+        <%= label_tag "logo", "Upload an image" %>
+        <%= text_field_tag "logo", "", "class" => "form-control" %>
+      </div>
+
+      <div class="form-group">
+        <%= label_tag "origin", "Where does the Chocolatier originate?" %>
+        <%= text_field_tag "origin", "", "class" => "form-control" %>
+      </div>
+
+      <div class="form-group">
+        <%= label_tag "website", "Upload the link to Chocolatier's website" %>
+        <%= text_field_tag "website", "", "class" => "form-control" %>
+      </div>
+
+      <%= submit_tag "Edit This Chocolatier", "class" => "btn btn-lg btn-success" %> or <%= link_to "Cancel", "/chocolatiers/#{chocolatier["id"]}" %>
+
+    </form>

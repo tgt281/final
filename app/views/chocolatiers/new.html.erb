@@ -1,0 +1,34 @@
+<div class="page-header">
+  <h1>Add a New Chocolatier</h1>
+</div>
+
+<div class="row">
+  <div class="col-md-5">
+
+    <%= form_tag "/chocolatiers", "method" => "post"  %>
+
+      <div class="form-group">
+        <%= label_tag "name", "What is the name of the Chocolatier?" %>
+        <%= text_field_tag "name", "", "class" => "form-control" %>
+      </div>
+
+      <div class="form-group">
+        <%= label_tag "logo", "Upload an image" %>
+        <%= text_field_tag "logo", "", "class" => "form-control" %>
+      </div>
+
+      <div class="form-group">
+        <%= label_tag "origin", "Where does the Chocolatier originate?" %>
+        <%= text_field_tag "origin", "", "class" => "form-control" %>
+      </div>
+
+      <div class="form-group">
+        <%= label_tag "website", "Upload the link to Chocolatier's website?" %>
+        <%= text_field_tag "website", "", "class" => "form-control" %>
+      </div>
+
+      <%= submit_tag "Add This Chocolatier", "class" => "btn btn-lg btn-success" %> or <%= link_to "Cancel", "/chocolatiers" %>
+
+    </form>
+</div>
+</div>

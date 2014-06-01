@@ -1,13 +1,13 @@
 Final::Application.routes.draw do
 
   # Home page
-  get "/" => "welcome#index"
+  get "/" => "chocolatiers#index"
 
 
   # Sign-In and Sign-Out
   get "/login" => 'sessions#login'
   post "/authenticate" => 'sessions#authenticate'
-
+  get "/logout" => 'sessions#logout'
 
   # Resource: Users
 
@@ -17,14 +17,14 @@ Final::Application.routes.draw do
 
   # --- Read
   get "/users" => 'users#index'
-  get "/users/:id" => 'users#show'
+  get "/users/:username" => 'users#show'
 
   # -- Update
-  get "/users/:id/edit" => 'users#edit'
-  patch "/users/:id" => 'users#update'
+  get "/users/:username/edit" => 'users#edit'
+  patch "/users/:username" => 'users#update'
 
   # --- Delete
-  delete "/users/:id" => 'users#destroy'
+  delete "/users/:username" => 'users#destroy'
 
 
   # Resource: Reviews

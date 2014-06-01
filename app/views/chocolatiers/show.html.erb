@@ -1,0 +1,33 @@
+<% chocolatier_id = params["id"] %>
+<% chocolatier = Chocolatier.read(chocolatier_id) %>
+
+<div class="row">
+
+  <div class="col-md-4">
+    <%= image_tag(chocolatier["logo_url"], "class" => "indeximage") %>
+  </div>
+
+  <div class="col-md-8">
+    <h1><%= chocolatier["name"] %>
+      <h4><small>
+      <p>Origin: <%= chocolatier["origin"] %></p>
+      <p>Company Website: <%= link_to chocolatier["website_url"], chocolatier["website_url"] %></p>
+      </small></h4>
+    </h1>
+
+    <h3>Chocolate Creations</h3>
+    <% chocolates = Chocolate.where("chocolatier_id" => chocolatier["id"]) %>
+    <ul>
+      <% chocolates.each do |chocolate| %>
+        <li>
+          <%= chocolate["name"]  %>
+        </li>
+      <% end %>
+    </ul>
+
+<% chocolates.each do |chocolate| %>
+  <%= image_tag chocolate["photo_url"], "class" => "showimage" %>
+<% end %>
+
+  </div>
+</div>
