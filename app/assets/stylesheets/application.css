@@ -31,6 +31,13 @@
   width: 130px;
 }
 
+.btn {
+  color: #ffffff;
+  background-color: #F08080;
+  border-color: #F08080;
+}
+
+
 
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
