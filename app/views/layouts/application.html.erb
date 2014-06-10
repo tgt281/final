@@ -30,10 +30,10 @@
           </div>
 
           <div class="pull-right">
-            <% user = User.find_by("username" => cookies["username"]) %>
+            <% user = User.find_by("id" => cookies["user_id"]) %>
             <% if user != nil %>
               <%= user["name"] %>
-              <%= link_to "My Profile", '/users' %> |
+              <%= link_to "My Profile", '/users/#{user["id"]}' %> |
               <%= link_to "Sign Out", '/logout' %>
             <% else %>
               <%= link_to "Sign Up", '/users/new' %> |

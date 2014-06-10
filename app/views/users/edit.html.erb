@@ -1,11 +1,11 @@
 <h1>Edit User</h1>
 
-<% the_user = User.read(params["username"]) %>
+<% the_user = User.read(params["id"]) %>
 
 <div class="row">
   <div class="col-md-5">
 
-    <%= form_tag "/users/#{the_user['username']}", "method" => "patch"  %>
+    <%= form_tag "/users/#{the_user['id']}", "method" => "patch"  %>
 
       <div class="form-group">
         <%= label_tag "username", "Choose a username:" %>
@@ -22,7 +22,7 @@
         <%= text_field_tag "name", the_user["name"], "class" => "form-control" %>
       </div>
 
-      <%= submit_tag "Save Changes", "class" => "btn btn-lg btn-success" %> or <%= link_to "Cancel", "/" %>
+      <%= submit_tag "Save Changes", "class" => "btn btn-lg btn-success" %> or <%= link_to "Cancel", "/users" %>
 
     </form>
 </div>

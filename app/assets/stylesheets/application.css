@@ -18,14 +18,20 @@
   box-shadow: 10px 10px 10px #999;
 }
 
-.showimage
-{
+.showimage {
   height: 160px;
   width: 130px;
   border-radius: 50%;
   border: 1px solid #CCC;
   box-shadow: 10px 10px 10px #999;
 }
+
+.index {
+  height: 160px;
+  width: 130px;
+}
+
+
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.

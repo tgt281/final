@@ -4,8 +4,8 @@ class SessionsController < ApplicationController
     the_user = User.find_by("username" => params["username"])
     if the_user != nil
       if the_user["password"] == params["password"]
-        cookies["username"] = the_user["username"]
-        redirect_to "/users/#{the_user["username"]}", :notice => "Hi there #{the_user["username"]}!"
+        cookies["user_id"] = the_user["id"]
+        redirect_to "/users/#{the_user["id"]}", :notice => "Hi there #{the_user["username"]}!"
       else
         logger.debug "Hi there!"
         redirect_to "/login", :notice => "Unknown password."
@@ -16,7 +16,7 @@ class SessionsController < ApplicationController
   end
 
   def logout
-    cookies.delete("username")
+    cookies.delete("user_id")
     redirect_to "/", :notice => "Thanks for stopping by!"
   end
 

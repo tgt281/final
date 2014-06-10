@@ -20,13 +20,13 @@
     <ul>
       <% chocolates.each do |chocolate| %>
         <li>
-          <%= chocolate["name"]  %>
+          <%= link_to chocolate["name"], "/chocolates/#{chocolate["id"]}" %>
         </li>
       <% end %>
     </ul>
 
 <% chocolates.each do |chocolate| %>
-  <%= image_tag chocolate["photo_url"], "class" => "showimage" %>
+  <%= link_to image_tag(chocolate["photo_url"], "class" => "showimage"), "/chocolates/#{chocolate["id"]}" %>
 <% end %>
 
   </div>

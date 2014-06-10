@@ -17,14 +17,11 @@ Final::Application.routes.draw do
 
   # --- Read
   get "/users" => 'users#index'
-  get "/users/:username" => 'users#show'
+  get "/users/:id" => 'users#show'
 
   # -- Update
-  get "/users/:username/edit" => 'users#edit'
-  patch "/users/:username" => 'users#update'
-
-  # --- Delete
-  delete "/users/:username" => 'users#destroy'
+  get "/users/:id/edit" => 'users#edit'
+  patch "/users/:id" => 'users#update'
 
 
   # Resource: Reviews
@@ -48,19 +45,19 @@ Final::Application.routes.draw do
   # Resource: Chocolates
 
   # --- Create
-  get "/chocolates/new" => 'chocolates#new'
-  post "/chocolates" => 'chocolates#create'
+  get "/chocolatiers/:chocolatier_id/chocolates/new" => 'chocolates#new'
+  post "/chocolatiers/:chocolatier_id/chocolates" => 'chocolates#create'
 
   # --- Read
   get "/chocolates" => 'chocolates#index'
   get "/chocolates/:id" => 'chocolates#show'
 
   # -- Update
-  get "/chocolates/:id/edit" => 'chocolates#edit'
-  patch "/chocolates/:id" => 'chocolates#update'
+  get "/chocolatiers/:chocolatier_id/chocolates/:id/edit" => 'chocolates#edit'
+  patch "/chocolatiers/:chocolatier_id/chocolates/:id" => 'chocolates#update'
 
   # --- Delete
-  delete "/chocolates/:id" => 'chocolates#destroy'
+  delete "/chocolatiers/:chocolatier_id/chocolates/:id" => 'chocolates#destroy'
 
 
   # Resource: Chocolatiers
